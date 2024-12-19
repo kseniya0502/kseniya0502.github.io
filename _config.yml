@@ -1,0 +1,93 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+# Navigation
+navigation:
+  - text: Главная
+    url: /
+  - text: Обо мне
+    url: /about/
+  - text: Блог
+    url: /blog/
+    layout: post
+
+title: Your awesome title
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this line in
+  _config.yml. It will appear in your document head meta (for Google search
+  results) and in your feed.xml site description.
+baseurl: '' # the subpath of your site, e.g. /blog
+url: '' # the base hostname & protocol for your site, e.g. http://example.com
+
+paginate_path: '/blog/page:num/'
+paginate: 5
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+
+# Главная страница
+# Resume settings
+resume_name:                    "Lisa M. Simpson"
+resume_title:                   "Учитель информатики"
+
+# used for the contact button in _layouts/resume.html
+resume_contact_email:           "lisasimpson@youremailaddress.com"
+
+resume_header_intro: "Добро пожаловать! Вы найдете полезные ресурсы для практических занятий, тестов и интересных задач, которые помогут развивать навыки работы с компьютером и программами. Сайт создан для учеников, стремящихся углубить знания в области информатики, а также для педагогов, ищущих качественные образовательные материалы."
+resume_about_blog: "Здесь представлены материалы для обучения основам информационных технологий, программирования и вычислительных наук."
+
+
+# Decide which sections to use
+# comment out to hide
+resume_section_experience:      true
+resume_section_education:       true
+resume_section_achievements:    true
+
+# Resume social links
+# uncomment the options you wish to display, and add your own URL
+resume_social_links:
+  - text: Инфоурок
+    url: "https://infourok.ru/"
+
+resume_print_social_links:      true
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

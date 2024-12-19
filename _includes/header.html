@@ -1,0 +1,23 @@
+<header class="d-flex justify-content-center py-3 bg-primary-subtle">
+  <nav class="navbar navbar-expand">
+    <div class="container-fluid">
+        <div class="navbar-nav">
+          {% for link in site.navigation %}
+            {% assign current = nil %}
+            {% if page.url == link.url or page.layout == link.layout %}
+              {% assign current = 'active' %}
+            {% endif %}
+
+            <a class="nav-link {{ current }}" 
+               href="{{ link.url }}" 
+              {% if page.url == link.url or page.layout == link.layout %}
+                   aria-current="page"
+              {% endif %}
+            >
+              {{ link.text }}
+            </a>
+          {% endfor %}
+        </div>
+    </div>
+  </nav>
+</header>
