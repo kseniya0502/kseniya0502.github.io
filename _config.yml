@@ -48,7 +48,7 @@ plugins:
 
 # Главная страница
 # Resume settings
-resume_name:                    "Lisa M. Simpson"
+resume_name:                    "Мамаева Ксения Вячеславовна"
 resume_title:                   "Учитель информатики"
 
 # used for the contact button in _layouts/resume.html
@@ -68,7 +68,7 @@ resume_section_achievements:    true
 # uncomment the options you wish to display, and add your own URL
 resume_social_links:
   - text: Инфоурок
-    url: "https://infourok.ru/"
+    url: "https://infourok.ru/user/mamaeva-kseniya-vyacheslavovna1"
 
 resume_print_social_links:      true
 
