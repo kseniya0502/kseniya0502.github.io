@@ -114,11 +114,11 @@ description: Главная страница
             class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3"
           >
             {% for achievement in site.data.achievements %}
-              <div class="col">
-                <div class="card shadow-sm">
-                  <img src="{{ achievement.img }}" class="card-img-top pop" />
-                </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="{{ achievement.img }}" class="card-img-top preview" />
               </div>
+            </div>
             {% endfor %}
           </div>
         </section>
@@ -164,37 +164,9 @@ description: Главная страница
         </div>
         <!-- end Print Social Links -->
         {% endif %}
-
       </div>
     </div>
   </div>
 
-  <div class="modal" id="imagemodal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">              
-        <div class="modal-body">
-          <div class="d-flex justify-content-end">
-            <button id="close-preview-modal" type="button" class="close btn mb-1">
-              <span>&#x2715;</span>
-            </button>
-          </div>
-          <img src="" class="imagepreview" style="width: 100%;" >
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.querySelectorAll('.pop').forEach(function(el) {
-        el.addEventListener('click', function() {
-            document.querySelector('.imagepreview').src = el.src;
-            document.querySelector('#imagemodal').style.display = "block";
-        });
-    });
-
-    document.querySelector('#close-preview-modal').addEventListener('click', function() {
-        document.querySelector('.imagepreview').src = '';
-        document.querySelector('#imagemodal').style.display = "none";
-    });
-  </script>
+  {% include img-preview-modal.html %}
 </div>

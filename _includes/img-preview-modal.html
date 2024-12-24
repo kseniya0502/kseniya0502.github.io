@@ -1,0 +1,48 @@
+<div class="modal" id="image-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex justify-content-end">
+          <button id="close-preview-modal" type="button" class="close btn mb-1">
+            <span>&#x2715;</span>
+          </button>
+        </div>
+        <img src="" class="image-preview" style="width: 100%" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modalElement = document.querySelector('#image-modal');
+  const imagepreview = document.querySelector('.image-preview');
+
+  document.querySelectorAll('.preview').forEach(function (el) {
+    el.addEventListener('click', function () {
+      imagepreview.src = el.src;
+
+      modalElement.classList.add('show');
+      setTimeout(function () {
+        modalElement.style.opacity = 1;
+      }, 0);
+    });
+  });
+
+  document
+    .querySelector('#close-preview-modal')
+    .addEventListener('click', function () {
+      modalElement.style.opacity = 0;
+      setTimeout(function () {
+        modalElement.classList.remove('show');
+        imagepreview.src = '';
+      }, 250);
+    });
+</script>
+
+<style>
+  .modal.show {
+    opacity: 0;
+    display: block;
+    transition: opacity 0.25s ease-in-out;
+  }
+</style>

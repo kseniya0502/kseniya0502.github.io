@@ -179,29 +179,29 @@
             class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3"
           >
             
-              <div class="col">
-                <div class="card shadow-sm">
-                  <img src="images/achievements/photo_2024-12-23_17-47-22.jpg" class="card-img-top pop" />
-                </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="images/achievements/photo_2024-12-23_17-47-22.jpg" class="card-img-top preview" />
               </div>
+            </div>
             
-              <div class="col">
-                <div class="card shadow-sm">
-                  <img src="images/achievements/photo_2024-12-23_17-47-29.jpg" class="card-img-top pop" />
-                </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="images/achievements/photo_2024-12-23_17-47-29.jpg" class="card-img-top preview" />
               </div>
+            </div>
             
-              <div class="col">
-                <div class="card shadow-sm">
-                  <img src="images/achievements/photo_2024-12-23_17-47-26.jpg" class="card-img-top pop" />
-                </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="images/achievements/photo_2024-12-23_17-47-26.jpg" class="card-img-top preview" />
               </div>
+            </div>
             
-              <div class="col">
-                <div class="card shadow-sm">
-                  <img src="images/achievements/photo_2024-12-23_17-47-32.jpg" class="card-img-top pop" />
-                </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="images/achievements/photo_2024-12-23_17-47-32.jpg" class="card-img-top preview" />
               </div>
+            </div>
             
           </div>
         </section>
@@ -294,39 +294,59 @@
         </div>
         <!-- end Print Social Links -->
         
-
       </div>
     </div>
   </div>
 
-  <div class="modal" id="imagemodal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">              
-        <div class="modal-body">
-          <div class="d-flex justify-content-end">
-            <button id="close-preview-modal" type="button" class="close btn mb-1">
-              <span>&#x2715;</span>
-            </button>
-          </div>
-          <img src="" class="imagepreview" style="width: 100%;" >
+  <div class="modal" id="image-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex justify-content-end">
+          <button id="close-preview-modal" type="button" class="close btn mb-1">
+            <span>&#x2715;</span>
+          </button>
         </div>
+        <img src="" class="image-preview" style="width: 100%" />
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    document.querySelectorAll('.pop').forEach(function(el) {
-        el.addEventListener('click', function() {
-            document.querySelector('.imagepreview').src = el.src;
-            document.querySelector('#imagemodal').style.display = "block";
-        });
-    });
+<script>
+  const modalElement = document.querySelector('#image-modal');
+  const imagepreview = document.querySelector('.image-preview');
 
-    document.querySelector('#close-preview-modal').addEventListener('click', function() {
-        document.querySelector('.imagepreview').src = '';
-        document.querySelector('#imagemodal').style.display = "none";
+  document.querySelectorAll('.preview').forEach(function (el) {
+    el.addEventListener('click', function () {
+      imagepreview.src = el.src;
+
+      modalElement.classList.add('show');
+      setTimeout(function () {
+        modalElement.style.opacity = 1;
+      }, 0);
     });
-  </script>
+  });
+
+  document
+    .querySelector('#close-preview-modal')
+    .addEventListener('click', function () {
+      modalElement.style.opacity = 0;
+      setTimeout(function () {
+        modalElement.classList.remove('show');
+        imagepreview.src = '';
+      }, 250);
+    });
+</script>
+
+<style>
+  .modal.show {
+    opacity: 0;
+    display: block;
+    transition: opacity 0.25s ease-in-out;
+  }
+</style>
+
 </div>
 
     <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
